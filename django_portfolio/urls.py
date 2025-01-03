@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
     path('', include('portfolio.urls')),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
