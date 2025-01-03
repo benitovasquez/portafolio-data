@@ -1,21 +1,14 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
 <div class="text-center">
-
-  <h1>{{post.title}}</h1>
-  <h2 class="my-2 h5 text-muted">{{post.date|date:'F jS Y'}}</h2>
-
+  <h1 class="text-4xl font-bold mb-4">{{ post.title }}</h1>
+  <h2 class="text-gray-400 text-lg mb-6">{{ post.date|date:'F jS Y' }}</h2>
   {% if post.image %}
-    <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">
-  {% else %}
-    <img src="{% static 'default_post_image.jpg' %}" alt="Default Image" class="img-fluid">
+  <img src="{{ post.image.url }}" alt="{{ post.title }}" class="mx-auto rounded-md mb-6">
   {% endif %}
-
-  <div class="my-4">
-    {{post.description|safe}}
+  <div class="text-left mx-auto max-w-4xl">
+    <p class="text-gray-300">{{ post.description|safe }}</p>
   </div>
 </div>
-
 {% endblock %}
