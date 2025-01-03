@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['portafolio-data-fy0y.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
