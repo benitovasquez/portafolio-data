@@ -36,15 +36,19 @@
   <div class="col-md-4 mb-4">
     <div class="card bg-black text-white h-100">
       <div class="image-container" style="height: 200px; overflow: hidden;">
-        <img src="{{ project.image.url }}" class="w-100 h-100 object-fit-cover" alt="Project Image">
+        {% if project.image %}
+          <img src="{{ project.image.url }}" class="w-100 h-100 object-fit-cover" alt="Project Image">
+        {% else %}
+          <img src="{% static 'default_project_image.jpg' %}" class="w-100 h-100 object-fit-cover" alt="Default Image">
+        {% endif %}
       </div>
       <div class="card-body d-flex flex-column">
         <h2 class="h5">{{ project.title }}</h2>
         <p class="text-truncate">{{ project.description }}</p>
         {% if project.url %}
-        <a href="{{ project.url }}" class="btn btn-light rounded-0 btn-sm mt-auto" target="__blank" rel="noreferrer">
-          Visit the Project
-        </a>
+          <a href="{{ project.url }}" class="btn btn-light rounded-0 btn-sm mt-auto" target="__blank" rel="noreferrer">
+            Visit the Project
+          </a>
         {% endif %}
       </div>
     </div>

@@ -9,6 +9,8 @@
 
   {% if post.image %}
     <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">
+  {% else %}
+    <img src="{% static 'default_post_image.jpg' %}" alt="Default Image" class="img-fluid">
   {% endif %}
 
   <div class="my-4">
