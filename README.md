@@ -1,15 +1,25 @@
-## Django Portofolio Example
+# Django Portfolio
 
-this is a basic portfolio in dark mode
-![](./screenshot.png)
+Portfolio web desarrollado con Django y desplegado en Render.
 
-### Installation
+## Instalación Local
 
-```
-git clone https://github.com/FaztWeb/django-portfolio-simple.git
-cd django-portfolio-simple
+```bash
+git clone <tu-repositorio>
+cd portafolio-data
 pip install -r requirements.txt
-python manage.py runserver
 ```
 
-now you can visit <a href="http://localhost:8000" target="_blank">http://localhost:8000</a>
+## Variables de Entorno
+Crear archivo `.env` con:
+```
+DB_NAME=portafolio_web
+DB_USER=portafolio_web_user
+DB_PASSWORD=tu_password
+DB_HOST=tu_host
+SECRET_KEY=tu_secret_key
+```
+
+## Despliegue
+La aplicación está desplegada en:
+https://portafolio-data-fy0y.onrender.com/
