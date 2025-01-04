@@ -3,7 +3,9 @@ import os
 import sys
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_portfolio.settings.development')
+    """Run administrative tasks."""
+    env = os.getenv('ENV', 'development')  # Si no se encuentra, usa 'development'
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', f'django_portfolio.settings.{env}')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

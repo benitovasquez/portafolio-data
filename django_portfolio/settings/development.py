@@ -22,16 +22,3 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
-
-# Agregar después de DEBUG
-DEVELOPMENT = True
-
-# Agregar configuración de email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Configuración de caché para desarrollo
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
-}
